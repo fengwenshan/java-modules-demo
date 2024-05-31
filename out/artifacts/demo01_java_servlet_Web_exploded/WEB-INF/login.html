@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="/user/login" method="post">
+    <label for="username">
+        <span>请输入用户名：</span>
+        <input type="text" placeholder="请输入用户名" id="username">
+    </label>
+    <label for="password">
+        <span>请输入密码：</span>
+    </label>
+    <input type="password" placeholder="请输入密码" id="password">
+    <button type="submit">登录</button>
+    <button type="reset">重置</button>
+    <!-- 需要加type, 不然会触发submit 事件   -->
+    <button onclick="onReset()" type="button">点击重置</button>
+</form>
+<script>
+    const formEl = document.querySelector('form')
+
+    formEl.addEventListener('submit', e => {
+        console.log(e)
+        console.dir(e)
+        e.preventDefault()
+    })
+
+    function onReset() {
+        formEl.reset()
+        return false
+    }
+</script>
+</body>
+</html>
