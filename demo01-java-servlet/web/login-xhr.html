@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/user/login" method="post">
+<form method="post">
     <label for="username">
         <span>请输入用户名：</span>
         <input type="text" placeholder="请输入用户名" id="username">
@@ -26,10 +26,41 @@
     const formEl = document.querySelector('form')
 
     formEl.addEventListener('submit', e => {
-        console.log(e)
-        console.dir(e)
+        const inputArr = Array.from(e.srcElement).filter(item => item.nodeName !== "BUTTON")
+        const formData = new FormData()
+        inputArr.forEach(item => {
+            formData.append(item.id, item.value)
+        })
+
+        // 创建 XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        // 初始化
+        xhr.open('post', '/java-web/user')
+        xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+        xhr.responseType = "document"
+        xhr.timeout = 10000;
+        // 发送请求。
+        xhr.send(formData)
+
+        xhr.onload = function() {
+            console.log(xhr)
+            if(xhr.status != 200) {
+
+            } else {
+
+            }
+        }
+        xhr.onerror = function() {
+
+        }
+
+        xhr.onprogress = function(event) {
+
+        }
+
         e.preventDefault()
     })
+
 
     function onReset() {
         formEl.reset()
