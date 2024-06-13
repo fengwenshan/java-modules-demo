@@ -4,19 +4,12 @@ import java.util.UUID;
 
 public class TodoListBean {
 
-    public TodoListBean(UUID id, String username, Integer age, String link) {
-        this.id = id;
-        this.username = username;
-        this.age = age;
-        this.like = link;
-    }
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
+    // public TodoListBean(UUID id, String username, Integer age, String link) {
+    //     this.id = id;
+    //     this.username = username;
+    //     this.age = age;
+    //     this.like = link;
+    // }
 
     public String getUsername() {
         return username;
@@ -42,10 +35,6 @@ public class TodoListBean {
         this.like = link;
     }
 
-    /**
-     * 添加的id
-     */
-    private UUID id;
     /**
      * 用户名
      */

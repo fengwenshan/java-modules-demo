@@ -9,7 +9,7 @@ public class TodoListStore {
     private static final List<TodoListBean> list = new ArrayList<TodoListBean>();
 
     static {
-        list.add(new TodoListBean(UUID.randomUUID(), "lisi", 18, "1,2,3"));
+        // list.add(new TodoListBean(UUID.randomUUID(), "lisi", 18, "1,2,3"));
     }
 
     public static void add(TodoListBean todo) {
